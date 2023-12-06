@@ -3,7 +3,7 @@ const path = require("path");
 const hbs = require("hbs");
 
 const app = express();
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 const pages_path = path.join(__dirname, "./src/pages");
 const components_path = path.join(__dirname, "./src/component");
@@ -18,8 +18,12 @@ app.get("/", (req, res) => {
   res.render("homepage");
 });
 
-app.get("/course", (req, res) => {
-  res.render("coursepage");
+app.get("/about", (req, res) => {
+  res.render("aboutpage");
+});
+
+app.get("/weather", (req, res) => {
+  res.render("weatherpage");
 });
 
 app.get("*", (req, res) => {
