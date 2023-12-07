@@ -3,58 +3,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous"/>
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"/>
-     <link rel="stylesheet" href="/styles/styles.css"/>
-     <link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-    
+  {{>headerlink}}
   </head>
   <body>
-    {{>navbar}}
-    {{>herosection}}
-    {{>footer}}
-    <!-- Javascript code -->
-    <script>
-        // set the default active slide to the first one
-        let slideIndex = 1;
-        showSlide(slideIndex);
-
-        // change slide with the prev/next button
-        function moveSlide(moveStep) {
-            showSlide(slideIndex += moveStep);
-        }
-
-        // change slide with the dots
-        function currentSlide(n) {
-            showSlide(slideIndex = n);
-        }
-
-        function showSlide(n) {
-            let i;
-            const slides = document.getElementsByClassName("slide");
-            const dots = document.getElementsByClassName('dot');
-            
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-
-            // hide all slides
-            for (i = 0; i < slides.length; i++) {
-                slides[i].classList.add('hidden');
-            }
-
-            // remove active status from all dots
-            for (i = 0; i < dots.length; i++) {
-                dots[i].classList.remove('bg-yellow-500');
-                dots[i].classList.add('bg-green-600');
-            }
-
-            // show the active slide
-            slides[slideIndex - 1].classList.remove('hidden');
-
-            // highlight the active dot
-            dots[slideIndex - 1].classList.remove('bg-green-600');
-            dots[slideIndex - 1].classList.add('bg-yellow-500');
-        }
-    </script>
+    <div class="h-screen flex flex-col">
+      <div>
+        {{>navbar}}
+      </div>
+      <div class="md:mt-12">
+        {{>herosection}}
+      </div>
+      <div class="mt-auto">
+        {{>footer}}
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
   </body>
 </html>

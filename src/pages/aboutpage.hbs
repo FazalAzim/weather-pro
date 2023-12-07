@@ -3,17 +3,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/solid.css" integrity="sha384-Tv5i09RULyHKMwX0E8wJUqSOaXlyu3SQxORObAI08iUwIalMmN5L6AvlPX2LMoSE" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="/styles/styles.css"/>
+    {{>headerlink}}
   </head>
   <body>
-    {{>navbar}}
-    <h1>About page</h1>
-    {{>footer}}
+    <div class="h-screen flex flex-col">
+      <div>
+        {{>navbar}}
+      </div>
+      <div class="mt-auto md:flex justify-center items-center space-x-4">
+        <div>
+          <img class="rounded-full w-72 h-72" src="/images/bg-5.jpg" alt="image description">  
+        </div>
+        <div>
+          <div class="space-y-4">
+            <p class="text-xl md:text-2xl font-serif">Current weather data</p>
+            <h1 class="text-sm md:text-xl"><span class="text-blue-400">Weather</span>
+            for any geographic coordinates on the globe</h1>
+            <button
+            onclick="window.location.href='/weather';"
+            type="button"
+            class="text-white bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 shadow-lg shadow-cyan-500/50 dark:shadow-lg dark:shadow-cyan-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+           >CHECK NOW</button>
+          </div>
+        </div>
+      </div>
+      <div class="mt-auto">
+        {{>footer}}
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.js"></script>
   </body>
 </html>
